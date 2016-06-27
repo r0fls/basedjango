@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from views import home, register
+from views import home, register, adduser
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -24,6 +24,6 @@ urlpatterns = [
     url('^accounts/', include('django.contrib.auth.urls')),
     url('^$', home, name='index'),
     url('^accounts/profile', home),
-    url('^register/',register,name='register'),
+    url('^register/', adduser, name='register'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
