@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from forms import UserForm
-from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
+from main.models import User, UserProfile
 
 def adduser(request):
     if request.method == "POST":
